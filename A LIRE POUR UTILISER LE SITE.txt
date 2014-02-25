@@ -1,0 +1,32 @@
+Il se peut que vous rencontriez des problèmes pour lancer notamment les
+commandes relatives à sqlsrv...
+
+Genre "Call to undefined function sqlsrv_connect()"
+
+--> Assurez vous d'avoir bien mis ces fichiers dans un de vos dossiers wamp/www
+
+--> http://www.microsoft.com/en-us/download/details.aspx?id=20098
+Téléchargez Microsoft Drivers 3.0 for PHP for SQL Server
+
+--> Exécutez le, et choisissez de mettre les fichiers dans votre 
+wamp/bin/php/php5.4.XX/ext
+
+
+--> Dans le fichier php.ini (disponible en cliquant sur l'icône de wamp, puis
+PHP, PHP.ini):
+	- Décommentez :
+		- extension=php_myssql.dll
+		- extension=php_pdo_mssql.dll
+		- extension=php_pdo_sqlite.dll
+
+	- Ajoutez à la suite :
+		- extension=php_pdo_sqlsrv_53_nts.dll
+		- extension=php_pdo_sqlsrv_53_ts.dll
+		- extension=php_pdo_sqlsrv_54_nts.dll
+		- extension=php_pdo_sqlsrv_54_ts.dll
+		- extension=php_sqlsrv_53_nts.dll
+		- extension=php_sqlsrv_53_ts.dll
+		- extension=php_sqlsrv_54_nts.dll
+		- extension=php_sqlsrv_54_ts.dll
+
+N'oubliez pas de redémarrer les services Wamp.
