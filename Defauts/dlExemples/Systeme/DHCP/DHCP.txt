@@ -1,0 +1,3 @@
+Pour qu’un serveur DHCP puisse servir des adresses IP, il est nécessaire de lui donner un « réservoir » d’adresses dans lequel il pourra puiser : c’est la plage d’adresses (address range).
+Il est possible de définir plusieurs plages, disjointes ou contiguës.
+Les adresses du segment qui ne figurent dans aucune plage mise à la disposition du serveur DHCP ne seront en aucun cas distribuées, et peuvent faire l’objet d’affectations statiques (couramment : pour les serveurs nécessitant une adresse IP fixe, les routeurs, les imprimantes réseau…).
