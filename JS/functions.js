@@ -13,7 +13,7 @@ function getLink(sousCategorie){
 		success:function(data) 
 		{
 			var doc = eval('(' + data + ')');
-			$('#titleRightContent').html(doc['nomCat']+" > "+doc['nomSousCat']);
+			$('#titleRightContent').html(doc['nomCat']+" <i class='glyphicon glyphicon-minus'></i> "+doc['nomSousCat']);
 			$('#titleLeftContent').html(doc['nomSousCatGauche']);
 		}
 	});
@@ -61,7 +61,7 @@ function seeFunction(intitule, sousCategorie, idReference){
 				success:function(data) 
 				{
 					var doc = eval('(' + data + ')');
-					$('#titleRightContent').html(doc['nomCat']+" > "+doc['nomSousCat']+" > "+intitule);
+					$('#titleRightContent').html(doc['nomCat']+" <i class='glyphicon glyphicon-minus'></i> "+doc['nomSousCat']+" > "+intitule);
 				}
 			});
 			goToFunctionLeftContent(sousCategorie, idReference);
@@ -129,6 +129,7 @@ function showSousCategorieAddFunction(idCategorie){
 		alert('Vérifier qu\'il y a une piéce jointe');
 	}
 }*/
+
 function addexemple(){
 	var id = document.getElementById('nombre').value;
 	id++;

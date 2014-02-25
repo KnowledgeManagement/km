@@ -5,7 +5,7 @@ function goToPage(){
 		success:function(data) 
 		{
 			$('#RightContent').html(data);
-			$('#titleRightContent').html("Liste des personnes inscrites <span style='float:right;margin-top:-15px;'><input type='button' class='bouton' style='width:140px' onclick='javascript:synchroAD()' value='Synchroniser AD'/></span>");
+			$('#titleRightContent').html("Liste des personnes inscrites <span style='float:right;margin-top:-15px;'><input type='button' class='btn btn-info' onclick='javascript:synchroAD()' value='Synchroniser AD'/></span>");
 		}
 	});
 }
@@ -52,7 +52,7 @@ function seeListOfEmployees(lettre){
 		success:function(data) 
 		{
 			$('#RightContent').html(data);
-			$('#titleRightContent').html("Liste des personnes inscrites <span style='float:right;margin-top:-15px;'><input type='button' class='bouton' style='width:140px' onclick='javascript:synchroAD()' value='Synchroniser AD'/></span>");
+			$('#titleRightContent').html("Liste des personnes inscrites <span style='float:right;margin-top:-15px;'><input type='button' class='btn btn-info' onclick='javascript:synchroAD()' value='Synchroniser AD'/></span>");
 		}
 	});
 }

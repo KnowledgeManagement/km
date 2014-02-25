@@ -10,8 +10,14 @@ $nomCat = $_POST['nomCat'];
 
 ?>
 
-<label style="font-weight:italic;font-size:11px">Vous allez ajouter un sous-menu rattaché à <?php echo $nomCat; ?>.</label><br/>
-<label>Nom :</label>
-<input type="text"  id="text_add_menu" name="text_add_menu" class="input_text"/>
-<input type="submit" value="Ajouter" name="button_add_sous_menu" class="bouton" onclick="javascript:AddSousCat(document.getElementById('text_add_menu').value, '<?php echo $idCat ?>', '<?php echo $nomCat ?>');"/>
-<input type="button" value="Retour" name="button_back" class="bouton" onclick="javascript:goToManageMenusRightContent();">
+<div class="form-inline">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<p><i class="glyphicon glyphicon-info-sign"></i>&nbsp;&nbsp;Vous allez ajouter un sous-menu rattaché à <?php echo $nomCat; ?>.</p>
+			Nom :
+			<input type="text"  id="text_add_menu" name="text_add_menu" class="form-control"/>
+			<input type="submit" value="Ajouter" name="button_add_sous_menu" class="btn btn-warning" onclick="javascript:AddSousCat(document.getElementById('text_add_menu').value, '<?php echo $idCat ?>', '<?php echo $nomCat ?>');"/>
+			<input type="button" value="Retour" name="button_back" class="btn btn-default" onclick="javascript:goToManageMenusRightContent();">
+		</div>
+	</div>
+</div>

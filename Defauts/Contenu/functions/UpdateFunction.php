@@ -9,7 +9,7 @@
 	$categorie = getCategorieById($_POST['categorie']);
 	$souscategorie = getsousCategorieById($_POST['souscategorie']);
 	$uploaddir = $_SERVER['DOCUMENT_ROOT'].'\Defauts\dlExemples\\'. utf8_decode($categorie[0]['nomCat']).'\\'.utf8_decode($souscategorie[0]['nomSousCat']).'\\';
-	echo $_POST['link'];
+	
 	$link = explode("/", $_POST['link']);
 	$reference = explode(".", $link[2]);
 	$uploadfile = $uploaddir.$reference[0];
@@ -44,7 +44,7 @@
 	
 	for ($i=0 ; $i<$_POST['nombre']+1 ; $i++)
 	{
-		$exemple .='<div class="cadreMessage">'.str_replace("'","''",htmlspecialchars($_POST['explication'.$i])).'</div></br></br>'.
+		$exemple .='<div class="panel panel-info">'.str_replace("'","''",htmlspecialchars($_POST['explication'.$i])).'</div></br></br>'.
 					'<section class="language-'.$souscategorie[0]['nomSousCat'].'"><pre class="line-numbers" style="solid cadetblue 4px;">
 					<code>'.str_replace("'","''",htmlspecialchars($_POST['exemple'.$i])).'</code></pre></section>';
 	}

@@ -10,32 +10,36 @@
 ?><br/>
 <link rel="stylesheet" href="CSS/prism.css"/>
 <script type="text/javascript" src="JS/prism.js"></script>
-<b>Dernière modification : </b><?php echo $infos[0]['date']->format('d/m/Y'); ?><br/><br/>
-<b>Description : </b><br/><br/>
-<?php echo $infos[0]['description']; ?><br/><br/>
-<b>Exemple : </b><br/>
-<p id="exemple"><?php echo $infos[0]['exemple']; ?></p><br/>
+<div class="list-group">
+	<div class="list-group-item">
+		<b>Dernière modification : </b><?php echo $infos[0]['date']->format('d/m/Y'); ?><br/><br/>
+		<b>Description : </b><br/><br/>
+		<?php echo $infos[0]['description']; ?><br/><br/>
+		<b>Exemple : </b><br/>
+		<p id="exemple"><?php echo $infos[0]['exemple']; ?></p><br/>
 
-<div style="width : 100%; text-align : right;">
-	<input type="button" class="bouton" value="Télécharger" onclick="javascript:downloadFunction('<?php echo $findLink;?>')"/>
-	<?php
-		if($_SESSION['fonction'] != "Accesseur"){
-			if(ifExistsInTmp($idReference)){
-				?>
-					<input type="button" class="bouton" value="Modifier" onclick="javascript:modifyFunction('<?php echo $idReference; ?>', '<?php echo $infos[0]['intituleDoc'] ?>')"/>
-				<?php
-			}else{
-				?>
-					<input type="button" class="bouton" value="Modifier" onclick="alert('Une modification est déjà en cours.');"/>
-				<?php
-			}
-		}
-		if($_SESSION['fonction'] == "Administrateur"){
-	?>
-		<input type="button" class="bouton" value="Supprimer" onclick="javascript:deleteFunction('<?php echo $idReference; ?>', <?php echo $_POST['sousCategorie']; ?>)"/>
-	<?php
-		}
-	?>
+		<div class="btn btn-group btn-group-sm">
+			<a href="#" class="btn btn-info" onclick="javascript:downloadFunction('<?php echo $findLink;?>')"/><i class="glyphicon glyphicon-floppy-disk"></i>&nbsp;&nbsp;Télécharger"</a>
+			<?php
+				if($_SESSION['fonction'] != "Accesseur"){
+					if(ifExistsInTmp($idReference)){
+						?>
+							<a href="#" class="btn btn-primary" onclick="javascript:modifyFunction('<?php echo $idReference; ?>', '<?php echo $infos[0]['intituleDoc'] ?>')"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Modifier</a>
+						<?php
+					}else{
+						?>
+							<a href="#" class="btn btn-primary" onclick="alert('Une modification est déjà en cours.');"/><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Modifier</a>
+						<?php
+					}
+				}
+				if($_SESSION['fonction'] == "Administrateur"){
+			?>
+				<a href="#" class="btn btn-danger" onclick="javascript:deleteFunction('<?php echo $idReference; ?>', <?php echo $_POST['sousCategorie']; ?>)"><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;&nbsp;Supprimer</a>
+			<?php
+				}
+			?>
+		</div>
+	</div>
 </div>
 <script type="text/javascript">
 	$( document ).ready(function() {

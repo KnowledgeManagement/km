@@ -13,13 +13,16 @@ $lettre = $_POST['lettre'];
 
 $listOfUsers = getUserByAlpha($lettre);
 
+echo '<div class="list-group">';
+echo '<div class="list-group-item">';
+
 if($listOfUsers != ""){
-	echo '<table id="tabListUsers" cellpadding="0" cellspacing="0">';
-	echo '<tr class="titre">';
-	echo '<td>Nom</td>';
-	echo '<td>Prénom</td>';
-	echo '<td>Fonction</td>';
-	echo '<td>Mot de passe</td>';
+	echo '<table id="tabListUsers" class="table table-condensed" style="text-align:center;">';
+	echo '<tr class="info">';
+	echo '<td><b>Nom</b></td>';
+	echo '<td><b>Prénom</b></td>';
+	echo '<td><b>Fonction</b></td>';
+	echo '<td><b>Mot de passe</b></td>';
 	echo '</tr>';
 		for($j = 0; $j < sizeof($listOfUsers); $j++){
 			echo '<tr>';
@@ -34,7 +37,9 @@ if($listOfUsers != ""){
 			echo '</td>';
 			echo '<td>';
 			?>
-				<input type="button" class="bouton" style="width:120px;margin:2px 0px 2px 0px;" onclick="javascript:reinitPass(<?php echo $listOfUsers[$j]['idUser']; ?>)" value="Réinitialiser"/>
+				<center>
+					<input type="button" class="btn btn-info btn-sm" onclick="javascript:reinitPass(<?php echo $listOfUsers[$j]['idUser']; ?>)" value="Réinitialiser"/>
+				</center>
 			<?php 
 			echo '</td>';
 			echo '</tr>';
@@ -43,5 +48,6 @@ if($listOfUsers != ""){
 } else {
 	echo "Aucun résultat trouvé !";
 }
-
+	echo "</div>";
+	echo "</div>";
 ?>

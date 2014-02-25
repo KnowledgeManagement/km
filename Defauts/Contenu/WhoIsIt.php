@@ -36,7 +36,7 @@
 	  Si différent d'administrateur > Ajout d'un onglet pour contacter l'administrateur --->
 <?php 
 	}*/
-	if($_SESSION['fonction'] == "Administrateur"){
+if($_SESSION['fonction'] == "Administrateur"){
 ?>
 	<div id="add">
 		<a href="#" id="boutonAjout" onclick="javascript:goToManageMenusRightContent();goToManageMenusLeftContent();">+</a>
@@ -52,48 +52,48 @@
 	}
 ?>
 <!--- MENU UTILISATEUR DEBUT --->
-<div id="UserMenu">
-	<ul>
-		<li>
-			<a href="#" >
+
+<ul class="nav navbar-nav">
+	<li class="dropdown">
+		<a href="#" class="titre_menu dropdown-toggle" data-toggle="dropdown">
 				<?php
 					if($_SESSION['fonction'] == "Administrateur"){
 						$notRead = countMessNotRead();
-						echo "<span title='Messages non lus'>(".$notRead.") </span>";
+						echo "<span title='Messages non lus' class='badge'>(".$notRead.") </span>&nbsp;";
 					}
 					echo $_SESSION['nom'];
 				?>
-			</a>
-			<ul>
-				<?php
-					if($_SESSION['fonction'] == "Administrateur"){
-				?>
-					<li>
-						<a href="#" style="margin-top : 2px;" onclick="javascript:goToMailBoxRightContent('allMessages');goToMailBoxLeftContent()">
-							Ma Messagerie
-						</a>
-					</li>
-					<li>
-						<a href="#" onclick="javascript:goToPage();goToPageLeft()">
-							Gérer les mots de passe
-						</a>
-					</li>
-				<?php
-					}else if($_SESSION['fonction'] == "Contributeur"){
-				?>
-					<li>
-						<a href="#" onclick="javascript:seeMyAsking()">
-							Gérer mes demandes
-						</a>
-					</li>
-				<?php
-					}
-				?>
-				<li><a href="Defauts/Contenu/deconnexion.php">Déconnexion</a></li>
-			</ul>
-		</li>
-	</ul>
-</div>
+		</a>
+		<ul class="dropdown-menu">
+			<?php
+				if($_SESSION['fonction'] == "Administrateur"){
+			?>
+				<li>
+					<a href="#" style="margin-top : 2px;" onclick="javascript:goToMailBoxRightContent('allMessages');goToMailBoxLeftContent()">
+						<i class="glyphicon glyphicon-envelope"></i> Ma Messagerie
+					</a>
+				</li>
+				<li>
+					<a href="#" onclick="javascript:goToPage();goToPageLeft()">
+						<i class="glyphicon glyphicon-wrench"></i> Gérer les mots de passe
+					</a>
+				</li>
+			<?php
+				}else if($_SESSION['fonction'] == "Contributeur"){
+			?>
+				<li>
+					<a href="#" onclick="javascript:seeMyAsking()">
+						<i class="glyphicon glyphicon-wrench"></i> Gérer mes demandes
+					</a>
+				</li>
+			<?php
+				}
+			?>
+			<li><a href="Defauts/Contenu/deconnexion.php"><i class="glyphicon glyphicon-off"></i>Déconnexion</a></li>
+		</ul>
+	</li>
+</ul>
+
 <div id="searchResult" style="display : none; border : solid black 1px; width : 100px; position : absolute; z-index : 50; background-color : white; color : black;">
 
 </div>

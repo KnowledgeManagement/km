@@ -5,12 +5,13 @@
 	$sousCa = $_POST['sousCate'];
 	$fct = $_POST['fct'];
 	
+	echo '<div class="list-group">';
 	$functions = getFunctionNameBySousCategorie($sousCa);
 	for($i = 0; $i < sizeof($functions); $i++){
 		if($functions[$i]['idReference'] == $fct){
-			echo "<span style='float:left' onclick='javascript:seeFunction(\"".$functions[$i]['intituleDoc']."\", ".$sousCa.", \"".$functions[$i]['idReference']."\")'><b>".$functions[$i]['intituleDoc'].'</b></span><br/>';
+			echo "<a class='list-group-item list-group-item-info' list-group-item-info' onclick='javascript:seeFunction(\"".$functions[$i]['intituleDoc']."\", ".$sousCa.", \"".$functions[$i]['idReference']."\")'><b>".$functions[$i]['intituleDoc'].'</b></a>';
 		}else{
-			echo "<span style='cursor:pointer;float:left' onclick='javascript:seeFunction(\"".$functions[$i]['intituleDoc']."\", ".$sousCa.", \"".$functions[$i]['idReference']."\")'>".$functions[$i]['intituleDoc'].'</span><br/>';
+			echo "<a class='list-group-item' style='cursor:pointer;' onclick='javascript:seeFunction(\"".$functions[$i]['intituleDoc']."\", ".$sousCa.", \"".$functions[$i]['idReference']."\")'>".$functions[$i]['intituleDoc'].'</a>';
 		}
 	}
 ?>

@@ -8,7 +8,7 @@
 	$array = array();
 	if($_SESSION['fonction'] != "Accesseur"){
 		$array['nomCat'] = $cat[0]['nomCat'];
-		$array['nomSousCatGauche'] = $cat[0]['nomSousCat'].'<a href="#" style="margin-left : 50px; float:right" title="Ajouter une fonction" id="boutonAjout" onclick="javascript:addFunctionContributeur('.$cat[0]['idSousCat'].', '.$cat[0]['idCat'].')">+</a>';
+		$array['nomSousCatGauche'] = $cat[0]['nomSousCat'].'<a href="#" style="margin-left : 50px; float:right" title="Ajouter une fonction" id="boutonAjout" onclick="javascript:addFunctionContributeur('.$cat[0]['idSousCat'].', '.$cat[0]['idCat'].')"><i class="glyphicon glyphicon-plus-sign"></i></a>';
 		$array['nomSousCat'] = $cat[0]['nomSousCat'];
 	}else{
 		$array['nomCat'] = $cat[0]['nomCat'];

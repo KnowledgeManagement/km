@@ -20,6 +20,10 @@
 		<link rel="stylesheet" href="css/bouton.css"/>
 		<link rel="stylesheet" href="css/sameLogs.css"/>
 		<link rel="stylesheet" href="css/prism.css"/>
+		<link rel="stylesheet" href="css/bootstrap.css"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/bootstrap-theme.css"/>
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
 		<link rel="icon" type="image/png" href="Images/favicon.png" />
 		<script type="text/javascript" src="JS/Jquery/jquery.js"></script>
         <script type="text/javascript" src="JS/Jquery/jquery.ui.js"></script>
@@ -29,6 +33,8 @@
 		<script type="text/javascript" src="JS/functions.js"></script>
 		<script type="text/javascript" src="JS/manageMenus.js"></script>
 		<script type="text/javascript" src="JS/prism.js"></script>
+		<script type="text/javascript" src="JS/bootstrap.js"></script>
+		<script type="text/javascript" src="JS/bootstrap.min.js"></script>
 		<script type="text/javascript" src="CKEditor/ckeditor/ckeditor.js"></script>
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -49,9 +55,16 @@
 	?>
 	<!----------- HEADER DEBUT ----------->
 		<header>
-			<!--- LOGO + BARRE DE RECHERCHE --->
-			<a href="accueil.php"><img id="logo" src="Images/logo.png" alt="Logo"/></a>
-			<input id="search" type="text" placeholder="Rechercher..." name="rechercher" />
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid" style="padding-left:40px">
+    				<div class="navbar-header">
+    					<a class="navbar-brand" href="accueil.php"><i class="glyphicon glyphicon-home"></i> <b>M5F</b></a>
+    				</div>
+    				<form class="navbar-form navbar-left" role="search">
+						 <div class="form-group">
+				          <input type="text" class="form-control" placeholder="Rechercher..." name="rechercher">
+				        </div>
+			        </form>
 			<?php
 				/* Selectionne les catégories par ordre d'identifiant */
 				$lesCate = getAllCategorie();
@@ -59,15 +72,15 @@
 			?>
 				<!--- MENU/SOUS-MENU DEBUT --->
 				<div class="menu">
-					<ul>
-						<li><a href="#" class="titre_menu"><?php echo $lesCate[$i]['nomCat']; ?></a>
-							<ul>
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a href="#" class="titre_menu dropdown-toggle" data-toggle="dropdown"><?php echo $lesCate[$i]['nomCat']; ?></a>
+							<ul class="dropdown-menu">
 								<?php
 									$SousMenu = getSousCategorieByCategorie($lesCate[$i]['idCat']);
 									if(isset($SousMenu)){
 										for($j = 0; $j < sizeof($SousMenu); $j++){
 									?>
-										<li><a href="#" onclick="javascript:goToFunction(<?php echo $SousMenu[$j]['idSousCat']; ?>)"><?php echo $SousMenu[$j]['nomSousCat']; ?></a></li>
+										<li><a href="#" onclick="javascript:goToFunction(<?php echo $SousMenu[$j]['idSousCat']; ?>)"><i class="glyphicon glyphicon-hand-right"></i>&nbsp;&nbsp;<?php echo $SousMenu[$j]['nomSousCat']; ?></a></li>
 									<?php
 										}
 									}
@@ -84,50 +97,60 @@
 				if($_SESSION['fonction'] == "Administrateur"){
 			?>
 				<div id="add">
-					<a href="#" id="boutonAjout" onclick="javascript:goToManageMenusRightContent();goToManageMenusLeftContent();">+</a>
+					<a href="#" class="glyphicon glyphicon-plus-sign" id="boutonAjout" onclick="javascript:goToManageMenusRightContent();goToManageMenusLeftContent();"></a>
 				</div>
-			<?php
-				}
+			<?php } ?>
+				<div class="class="nav navbar-nav navbar-right">
+					<div id="UserMenu" class="navbar-right">
+				</div>
+				
+				<?php 
 				if($_SESSION['fonction'] != "Administrateur"){
 			?>			
 				<div id="help">
-					<a href="#" onclick="javascript:contactAdmin()">?</a>
+					<a href="#" class="glyphicon glyphicon-question-sign" onclick="javascript:contactAdmin()"></a>
 				</div>
-			<?php
-				}
-			?>
+			
+			<?php }	?>
+
 			<!--- MENU UTILISATEUR DEBUT --->
 			<div id="UserMenu">
 				
 			</div>
 			<!--- MENU UTILISATEUR FIN --->
+			</div>
+		</nav> 
 		</header>
+
 		<!----------- HEADER FIN ----------->
 		<!----------- CORPS DEBUT ----------->
 		<section>
 			<div id="middle">
-					<!--- PARTIE GAUCHE DEBUT --->
-					<table id="LeftMainContent">
-						<tr>
-							<td>
-								<h3 id="titleLeftContent">Navigation</h3>
-								<hr>
-							</td>
-						</tr>
-						<tr>
-							<td class="stuckRightNav">
-								<div id="LeftContent">
-									
-								</div>
-							</td>
-						</tr>
-					</table>
+				<div class="container-fluid">
+					     <div class="row-fluid" id="row">
+							
+							<!--- PARTIE GAUCHE DEBUT --->
+							<table id="LeftMainContent">
+								<tr>
+									<td>
+										
+										<hr>
+									</td>
+								</tr>
+								<tr>
+									<td class="stuckRightNav">
+										<div id="LeftContent">
+											
+										</div>
+									</td>
+								</tr>
+							</table>
 					<!--- PARTIE GAUCHE FIN --->
 					<!--- PARTIE DROITE DEBUT --->
 					<table id="RightMainContent">	
 						<tr>
 							<td>
-								<h3 id="titleRightContent">Bienvenue</h3>
+								
 								<hr>
 								<div id="RightContent">
 								
@@ -138,10 +161,46 @@
 					<!--- PARTIE DROITE FIN --->
 			</div>
 		</section>
+
+
+		<section>
+			<div id="middle">
+				<div class="container-fluid">
+				    <div class="row-fluid" id="row">
+				     		<!--- PARTIE GAUCHE DEBUT --->
+					       
+
+					       	<div class="col-md-4">
+					       		<span id="titleLeftContent" class="label label-default"></span>
+					       		<div id="LeftContent">
+									<!--<h3 id="titleLeftContent">Navigation</h3>-->
+								</div>
+					       	</div>
+					       	<!--- PARTIE GAUCHE FIN --->
+					       	<!--- PARTIE DROITE DEBUT --->
+					       	<div class="col-md-8">
+					       		<span id="titleRightContent" class="label label-default"></span>
+								<div id="RightContent">
+									<!--<h3 id="titleRightContent">Bienvenue</h3>-->
+								</div>
+					      	</div>
+
+					       
+					       <!--- PARTIE DROITE FIN --->
+				    </div>
+				</div>
+			</div>
+		</section>
+
+
 		<!----------- CORPS FIN ----------->
 		<!----------- FOOTER DEBUT ----------->
 		<footer>
-			COPYRIGHT © - Toute la documentation disponible sur cette application est confidentielle - Marianne et les 5 fantastiques - 2013 
+			<div class="form-inline panel panel-default">
+				<div class="panel-body">
+					COPYRIGHT © - Toute la documentation disponible sur cette application est confidentielle - Marianne et les 5 fantastiques - 2013/2014
+				</div>
+			</div>
 			<?php
 				if ($_SESSION['fonction'] == 'Administrateur')
 				{

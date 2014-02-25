@@ -5,7 +5,8 @@
 	$notRead = countMessNotRead();
 	$read = countMessRead();
 ?>
-<span class="pointer" onclick='javascript:goToMailBoxRightContent("allMessages")'><b>(<?php echo $allRead; ?>)</b> Tous les messages<br/></span>
-<span class="pointer" onclick='javascript:goToMailBoxRightContent("read")'><b>(<?php echo $read; ?>)</b> Message(s) lu(s)<br/></span>
-<span class="pointer" onclick='javascript:goToMailBoxRightContent("notRead")'><b>(<?php echo $notRead; ?>)</b> Message(s) non lu(s)</span>
-																
+<div class="list-group">
+	<a class="list-group-item pointer" onclick='javascript:goToMailBoxRightContent("allMessages")'><b  class="badge">(<?php echo $allRead; ?>)</b><i class="glyphicon glyphicon-envelope"></i> Tous les messages<br/></a>
+	<a class="list-group-item pointer" onclick='javascript:goToMailBoxRightContent("read")'><b  class="badge">(<?php echo $read; ?>)</b><i class="glyphicon glyphicon-check"> Message(s) lu(s)<br/></a>
+	<a class="list-group-item pointer" onclick='javascript:goToMailBoxRightContent("notRead")'><b  class="badge">(<?php echo $notRead; ?>)</b><i class="glyphicon glyphicon-unchecked"> Message(s) non lu(s)</a>
+</div>
