@@ -71,8 +71,8 @@
 			<p><input type="file" name="pj" id="piecejointe" value="Insérer" /></p>
 			<br/>
 
-			<a href="#" class="btn btn-sm btn-warning" title="Ajouter un exemple" id="boutonAjout" onclick="javascript:addexemple()"><i class="glyphicon glyphicon-plus-sign"></i></a>
-			<a href="#" title="Enlever un exemple" id="boutonAjout" onclick="javascript:removeexemple()"><i class="glyphicon glyphicon-moins-sign"></i></a>
+			<a href="#" class="btn btn-sm btn-warning" title="Ajouter un exemple" onclick="javascript:addexemple()"><i class="glyphicon glyphicon-plus-sign"></i></a>
+			<a href="#" class="btn btn-sm btn-warning" title="Enlever un exemple" onclick="javascript:removeexemple()"><i class="glyphicon glyphicon-minus-sign"></i></a>
 
 			<input type="hidden" id="nombre" name="nombre" value=0 />
 

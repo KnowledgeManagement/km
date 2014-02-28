@@ -35,7 +35,7 @@
 		<script type="text/javascript" src="JS/prism.js"></script>
 		<script type="text/javascript" src="JS/bootstrap.js"></script>
 		<script type="text/javascript" src="JS/bootstrap.min.js"></script>
-		<script type="text/javascript" src="CKEditor/ckeditor/ckeditor.js"></script>
+		<!--<script type="text/javascript" src="CKEditor/ckeditor/ckeditor.js"></script>-->
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -97,7 +97,7 @@
 				if($_SESSION['fonction'] == "Administrateur"){
 			?>
 				<div id="add">
-					<a href="#" class="glyphicon glyphicon-plus-sign" id="boutonAjout" onclick="javascript:goToManageMenusRightContent();goToManageMenusLeftContent();"></a>
+					<a href="#" class="glyphicon glyphicon-plus-sign" onclick="javascript:goToManageMenusRightContent();goToManageMenusLeftContent();"></a>
 				</div>
 			<?php } ?>
 				<div class="class="nav navbar-nav navbar-right">
@@ -112,77 +112,32 @@
 				</div>
 			
 			<?php }	?>
-
-			<!--- MENU UTILISATEUR DEBUT --->
-			<div id="UserMenu">
-				
-			</div>
-			<!--- MENU UTILISATEUR FIN --->
-			</div>
-		</nav> 
+					</div>
+				</div>
+			</nav> 
 		</header>
-
 		<!----------- HEADER FIN ----------->
 		<!----------- CORPS DEBUT ----------->
 		<section>
 			<div id="middle">
 				<div class="container-fluid">
-					     <div class="row-fluid" id="row">
-							
-							<!--- PARTIE GAUCHE DEBUT --->
-							<table id="LeftMainContent">
-								<tr>
-									<td>
-										
-										<hr>
-									</td>
-								</tr>
-								<tr>
-									<td class="stuckRightNav">
-										<div id="LeftContent">
-											
-										</div>
-									</td>
-								</tr>
-							</table>
-					<!--- PARTIE GAUCHE FIN --->
-					<!--- PARTIE DROITE DEBUT --->
-					<table id="RightMainContent">	
-						<tr>
-							<td>
-								
-								<hr>
-								<div id="RightContent">
-								
-								</div>
-							</td>
-						</tr>
-					</table>
-					<!--- PARTIE DROITE FIN --->
-			</div>
-		</section>
-
-
-		<section>
-			<div id="middle">
-				<div class="container-fluid">
 				    <div class="row-fluid" id="row">
 				     		<!--- PARTIE GAUCHE DEBUT --->
-					       
-
+					      
 					       	<div class="col-md-4">
 					       		<span id="titleLeftContent" class="label label-default"></span>
-					       		<div id="LeftContent">
-									<!--<h3 id="titleLeftContent">Navigation</h3>-->
-								</div>
+									<div id="LeftContent">
+										<!--<h3 id="titleLeftContent">Navigation</h3>-->
+									</div>
 					       	</div>
 					       	<!--- PARTIE GAUCHE FIN --->
+							
 					       	<!--- PARTIE DROITE DEBUT --->
 					       	<div class="col-md-8">
 					       		<span id="titleRightContent" class="label label-default"></span>
-								<div id="RightContent">
-									<!--<h3 id="titleRightContent">Bienvenue</h3>-->
-								</div>
+									<div id="RightContent">
+										<!--<h3 id="titleRightContent">Bienvenue</h3>-->
+									</div>
 					      	</div>
 
 					       
@@ -201,14 +156,6 @@
 					COPYRIGHT © - Toute la documentation disponible sur cette application est confidentielle - Marianne et les 5 fantastiques - 2013/2014
 				</div>
 			</div>
-			<?php
-				if ($_SESSION['fonction'] == 'Administrateur')
-				{
-					include_once ("Defauts\Contenu\spaceGraph.php");
-					$graph = spaceGraph("C:\inetpub\wwwroot\www.KnowledgeManagement.fr/","eO",150,25,"#000000","#ccddcc","#ffffff");
-					echo "<img style='float:right;' src='".$graph."'>";
-				}
-			?>
 		</footer>
 		<!----------- FOOTER FIN ----------->
 	</body>

@@ -61,7 +61,7 @@ function seeFunction(intitule, sousCategorie, idReference){
 				success:function(data) 
 				{
 					var doc = eval('(' + data + ')');
-					$('#titleRightContent').html(doc['nomCat']+" <i class='glyphicon glyphicon-minus'></i> "+doc['nomSousCat']+" > "+intitule);
+					$('#titleRightContent').html(doc['nomCat']+" <i class='glyphicon glyphicon-minus'></i> "+doc['nomSousCat']+" <i class='glyphicon glyphicon-minus'></i> "+intitule);
 				}
 			});
 			goToFunctionLeftContent(sousCategorie, idReference);

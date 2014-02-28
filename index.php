@@ -12,18 +12,16 @@
 		<meta charset="utf-8"/>
 		<!-- Insertion du CSS et du Favicon -->
 		<link rel="stylesheet" href="css/bouton.css" />
-		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/accueil.css"/>
 		<link rel="stylesheet" href="css/authentification.css"/>
 		<link rel="stylesheet" href="css/bootstrap.css"/>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="css/bootstrap-theme.css"/>
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
-		<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
-		<link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
 		<link rel="icon" type="image/png" href="Images/favicon.png" />
 		<script type="text/javascript" src="JS/bootstrap.js"></script>
 		<script type="text/javascript" src="JS/bootstrap.min.js"></script>
+		
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -46,11 +44,9 @@
 				<div id="authentification">
 					<!--- FORMULAIRE DE CONNEXION --->
 					<form action="Defauts/Contenu/authentification.php" method="post">
-						<div class="form-inline panel panel-default">
+						<div class="form-inline panel panel-info">
 							<div class="panel-body">
 								<input type="text" name="identifiant" class="form-control" autofocus required placeholder="Identifiant" style="width:50%">
-							
-									
 									<?php
 										/* Si le mot de passe ou l'identifiant est faux, affichage d'un message d'erreur */
 										if(isset($_GET['error'])){
