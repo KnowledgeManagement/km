@@ -76,6 +76,8 @@
 			?>
 			<div style="margin-top : 50px;">
 				<b>Commentaire :</b> <input type="text" class="form-control" style="width : 350px;" id="commentaire" placeholder="Le commentaire sera vu par le contributeur..."/>
+			</div>
+			<div class="btn-group btn-group-sm" style="float:right;margin-top:10px;">	
 				<a href="#" class="btn btn-success" onclick="javascript:validMessage('<?php echo $idMessage; ?>')"><i class="glyphicon glyphicon-plus-sign"></i>&nbsp;&nbsp;Accepter</a>
 				<a href="#" class="btn btn-primary" onclick="javascript:modifMessage('<?php echo $idMessage; ?>', '<?php echo $message[0]['intituleTmp']; ?>')"><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;&nbsp;Modifier</a>
 				<a href="#" class="btn btn-danger" onclick="javascript:refuseMessage('<?php echo $idMessage; ?>')"><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;&nbsp;Refuser</a>
