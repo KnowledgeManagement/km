@@ -1,0 +1,9 @@
+Les principales commande linux sont:
+- ls --> liste le contenu d''un répertoire
+- cd --> change de répertoire
+- cd .. --> répertoire parent
+- mkdir --> crée un nouveau répertoire
+- rmdir --> supprime un répertoire
+- cp --> copie le fichier
+- mv --> déplace le fichier
+- rm --> supprime le fichier
