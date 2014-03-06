@@ -49,8 +49,8 @@
 					<code>'.str_replace("'","''",htmlspecialchars($_POST['exemple'.$i])).'</code></pre></section>';
 	}
 	$description = str_replace("'","''",htmlspecialchars($_POST['description']));
-	
-	addFunctionBddTmp(utf8_decode($_POST['id']), utf8_decode($_POST['intitule']),utf8_decode($description),$exemple,utf8_decode($categorie[0]['nomCat']).'/'.utf8_decode($souscategorie[0]['nomSousCat']).'/'.utf8_decode($reference[0]).'.zip',$_POST['souscategorie'],$_SESSION['id']);
+	$intitule = str_replace("'", "''",$_POST['intitule'] );
+	addFunctionBddTmp(utf8_decode($_POST['id']), utf8_decode($intitule),utf8_decode($description),$exemple,utf8_decode($categorie[0]['nomCat']).'/'.utf8_decode($souscategorie[0]['nomSousCat']).'/'.utf8_decode($reference[0]).'.zip',$_POST['souscategorie'],$_SESSION['id']);
 	header('Location:../../../accueil.php');
 
 ?>

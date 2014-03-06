@@ -33,13 +33,13 @@
 					if(ifExistsInTmp($idReference))
 					{
 						?>
-						<a href="#" class="btn btn-primary" onclick="javascript:modifyFunction('<?php echo $idReference; ?>', '<?php echo $infos[0]['intituleDoc'] ?>')"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Modifier</a>
+						<a href="#" class="btn btn-primary" onclick="javascript:modifyFunction('<?php echo $idReference; ?>', '<?php echo addslashes($infos[0]['intituleDoc']) ?>')"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Modifier</a>
 						<?php
 					}
 					else
 					{
 						?>
-						<a href="#" class="btn btn-primary" onclick="javascript:modifyFunction('<?php echo $idReference; ?>', '<?php echo $infos[0]['intituleDoc'] ?>')"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Modifier</a>
+						<input type="button" class="btn btn-primary" value="Modifier" onclick="alert('Une modification est déjà en cours.');"/>
 						<?php
 					}
 				}

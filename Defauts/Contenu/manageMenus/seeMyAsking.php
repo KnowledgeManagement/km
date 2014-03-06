@@ -52,12 +52,10 @@
 							for($i = 0; $i < sizeof($messages); $i++){
 								echo '<tr>';
 							?>
-								<td id='messTitle'>
-									<a href='#' onclick="javacript:openMessageContactContributeur(<?php echo $messages[$i]['idFormContact'] ?>, '<?php echo $messages[$i]['objet']; ?>')">
-										<?php echo $messages[$i]['objet']; ?>
-									</a>
+								<td id='messTitle' class="cursor" onclick="javacript:openMessageContactContributeur(<?php echo $messages[$i]['idFormContact'] ?>, '<?php echo $messages[$i]['objet']; ?>')">
+									<?php echo $messages[$i]['objet']; ?>
 								</td>
-								<td class='messTime'>
+								<td class='messTime cursor' onclick="javacript:openMessageContactContributeur(<?php echo $messages[$i]['idFormContact'] ?>, '<?php echo $messages[$i]['objet']; ?>')">
 									<?php
 										if($messages[$i]['lu'] == 0){
 											echo "Non Lu";
@@ -66,7 +64,7 @@
 										}
 									?>
 								</td>
-								<td class='messTime'>
+								<td class='messTime cursor' onclick="javacript:openMessageContactContributeur(<?php echo $messages[$i]['idFormContact'] ?>, '<?php echo $messages[$i]['objet']; ?>')">
 									<?php echo $messages[$i]['date']->format('d/m/Y H:i:s'); ?>
 								</td>
 							<?php
