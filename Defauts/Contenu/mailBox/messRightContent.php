@@ -112,9 +112,9 @@
 			</td>
 			<td id='messTitle' class="cursor">
 				<p class="cursor" for="<?php echo "check".$i; ?>">
-					<a href='#' onclick="javacript:openMessageContact(<?php echo $messages[$i]['idFormContact'] ?>, '<?php echo $messages[$i]['objet']; ?>')">
+					<p href='#' onclick="javacript:openMessageContact(<?php echo $messages[$i]['idFormContact'] ?>, '<?php echo $messages[$i]['objet']; ?>')">
 						<?php echo $messages[$i]['objet']; ?>
-					</a>
+					</p>
 				</p>
 			</td>
 			<td class='messTime, cursor' onclick="javacript:openMessageContact(<?php echo $messages[$i]['idFormContact'] ?>, '<?php echo $messages[$i]['objet']; ?>')">

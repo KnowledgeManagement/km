@@ -135,14 +135,7 @@
 		$msg .= '--'.$boundary."\r\n";
 	 
 	// Function mail()
-		if(mail($to, $subject, $msg, $headers)) 
-		{ 
-		  echo 'Le mail a été envoyé'; 
-		} 
-		else 
-		{ 
-		  echo 'Le mail n\'a pu être envoyé'; 
-		}
+		mail($to, $subject, $msg, $headers); 
 	
 	
 	header('Location:../../../accueil.php');

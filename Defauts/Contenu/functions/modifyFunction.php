@@ -71,13 +71,13 @@
 							}
 						}
 					?>
-				<tr style="float:left;">
+				<tr>
 				<?php
 					$link = $myFunction[0]["lienTelechargement"];
 					$uploaddir = $_SERVER['DOCUMENT_ROOT'].'\Defauts\dlExemples\\'.$link;
 				?>
 					<td class="tdModifFunction" style="width: 130px;" >Pièce jointe : </td>
-					<label><td><input style="width: 145px;" type="file" name="pj" id="piecejointe" value="<?php echo $uploaddir; ?>"/></label><label> <?php echo $link; ?> </label></td>
+					<label><td><input style="width: 167px;" type="file" name="pj" id="piecejointe" value="<?php echo $uploaddir; ?>"/></label><label> <?php echo $link; ?> </label></td>
 				</tr>
 				<tr>
 					<td><input type="hidden" name="link" value="<?php echo $link; ?>"/></td>

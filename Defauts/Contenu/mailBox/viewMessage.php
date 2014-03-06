@@ -21,7 +21,7 @@
 			<table class="table table-condensed">
 				<tr>
 					<td class="col-md-6">
-						<p class="text-right"><b>Expéditeur</b></p>
+						<p class="text-left"><b>Expéditeur</b></p>
 					</td>
 					<td class="col-md-6">
 						<?php echo $message[0]['nom'].' '.$message[0]['prenom']; ?>
@@ -29,7 +29,7 @@
 				</tr>
 				<tr>
 					<td>
-						<p class="text-right"><b>Date</b></p>
+						<p class="text-left"><b>Date</b></p>
 					</td>
 					<td>
 						<?php 
@@ -46,7 +46,7 @@
 				?>
 					<tr>
 						<td>
-							<p class="text-right"><b>Catégorie</b></p>
+							<p class="text-left"><b>Catégorie</b></p>
 						</td>
 						<td>
 							<?php echo $message[0]['nomCat']; ?>
@@ -54,7 +54,7 @@
 					</tr>
 					<tr>
 						<td>
-							<p class="text-right"><b>Sous-catégorie</b></p>
+							<p class="text-left"><b>Sous-catégorie</b></p>
 						</td>
 						<td>
 							<?php echo $message[0]['nomSousCat']; ?>

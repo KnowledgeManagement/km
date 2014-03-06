@@ -116,17 +116,9 @@
 		</form>
 	</div>
 </div>
+
 <script type="text/javascript">
-
-/* Add CKEditor */
-for(var i=0; i<<?php echo $exp; ?>; i++)
-{
-	CKEDITOR.replace( 'explication'+i );
-}
-CKEDITOR.replace( 'description');
-
-
- $( document ).ready(function() {
-	Prism.highlightAll();
- });
+	$( document ).ready(function() {
+		Prism.highlightAll();
+	});
 </script>

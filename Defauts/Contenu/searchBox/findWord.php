@@ -6,9 +6,12 @@
 	include_once "../../../SQL/Fonctions_SQL/user.php";
 	include_once "../../../SQL/Fonctions_SQL/search.php";
 	$mot = $_POST['text'];
-
-	$document = findTextByWord(str_replace("'", "''", utf8_decode($mot)));
-	
+	$listeSousCat = $_POST['maListe'];
+	if($listeSousCat[0] == "0")
+		$document = findTextByWord(str_replace("'", "''", utf8_decode($mot)));
+	else
+		$document = findTextByWordFilter(str_replace("'", "''", utf8_decode($mot)), $listeSousCat);
+		
 	function mettreMotEnGras($mot, $phrase) {
 		return ucfirst(str_replace($mot, "<strong>".$mot."</strong>", $phrase));
 	}

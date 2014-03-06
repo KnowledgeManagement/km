@@ -6,6 +6,17 @@
 		return $s1;
 	}
 	
+	function findTextByWordFilter($word, $myArray){
+		$liste = array();
+		for($i = 0; $i < sizeof($myArray); $i++){
+			$s1 = run("SELECT top 10 idReference, intituleDoc, description, idSousCat from m5f_document where idSousCat=".$myArray[$i]." AND (upper(intituleDoc) LIKE upper('%".$word."%') OR description LIKE '%".$word."%')");
+			for($j = 0; $j < sizeof($s1); $j++){
+				$liste[] = $s1[$j];
+			}
+		}
+		return $liste;
+	}
+	
 	function findAllIntitule(){
 		$s1 = run("SELECT intituleDoc from m5f_document");
 		

@@ -110,12 +110,12 @@ function contactAdmin(){
 }
 
 function sendContact(){
-	if(document.getElementById('objet').value == "" || document.getElementById('textArea').value == ""){
+	if(document.getElementById('objet').value == "" || document.getElementById('textarea').value == ""){
 		alert("Merci de remplir tous les champs.");
 	}else{
 		$.ajax({
 			url : 'Defauts/Contenu/manageMenus/sendContact.php',
-			data : {objet : document.getElementById('objet').value, description : document.getElementById('textArea').value},
+			data : {objet : document.getElementById('objet').value, description : document.getElementById('textarea').value},
 			dataType : 'TEXT',
 			type :'POST', 
 			success:function(data) 

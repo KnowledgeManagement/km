@@ -82,10 +82,6 @@
 </div>
 <script>
 
-/* Add CKEditor */
-CKEDITOR.replace( 'description' );
-CKEDITOR.replace( 'explication0' );
-
 function insertTab(o, e)
 {
 	var kC = e.keyCode ? e.keyCode : e.charCode ? e.charCode : e.which;

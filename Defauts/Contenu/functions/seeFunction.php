@@ -19,25 +19,38 @@
 		<p id="exemple"><?php echo $infos[0]['exemple']; ?></p><br/>
 
 		<div class="btn btn-group btn-group-sm">
-			<a href="#" class="btn btn-info" onclick="javascript:downloadFunction('<?php echo findLink($idReference); ?>')"><i class="glyphicon glyphicon-cloud-download"></i>&nbsp;&nbsp;Télécharger</a>
-			<?php
-				if($_SESSION['fonction'] != "Accesseur"){
-					if(ifExistsInTmp($idReference)){
+
+<?php
+				if($findLink == true)
+				{
 					?>
-						<a href="#" class="btn btn-primary" onclick="javascript:modifyFunction('<?php echo $idReference; ?>', '<?php echo $infos[0]['intituleDoc'] ?>')"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Modifier</a>
+					<a href="#" class="btn btn-info" onclick="javascript:downloadFunction('<?php echo findLink($idReference); ?>')"><i class="glyphicon glyphicon-cloud-download"></i>&nbsp;&nbsp;Télécharger</a>
 					<?php
-					}else{
-					?>
+				}
+
+				if($_SESSION['fonction'] != "Accesseur")
+				{
+					if(ifExistsInTmp($idReference))
+					{
+						?>
 						<a href="#" class="btn btn-primary" onclick="javascript:modifyFunction('<?php echo $idReference; ?>', '<?php echo $infos[0]['intituleDoc'] ?>')"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Modifier</a>
-					<?php
+						<?php
+					}
+					else
+					{
+						?>
+						<a href="#" class="btn btn-primary" onclick="javascript:modifyFunction('<?php echo $idReference; ?>', '<?php echo $infos[0]['intituleDoc'] ?>')"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Modifier</a>
+						<?php
 					}
 				}
-				if($_SESSION['fonction'] == "Administrateur"){
-			?>
-				<a href="#" class="btn btn-danger" onclick="javascript:deleteFunction('<?php echo $idReference; ?>', <?php echo $_POST['sousCategorie']; ?>)"><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;&nbsp;Supprimer</a>
-			<?php
+				if($_SESSION['fonction'] == "Administrateur")
+				{
+					?>
+					<a href="#" class="btn btn-danger" onclick="javascript:deleteFunction('<?php echo $idReference; ?>', <?php echo $_POST['sousCategorie']; ?>)"><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;&nbsp;Supprimer</a>
+					<?php
 				}
 			?>
+
 		</div>
 	</div>
 </div>
